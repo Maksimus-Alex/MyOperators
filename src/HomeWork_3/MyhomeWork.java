@@ -6,24 +6,54 @@ import java.util.Scanner;
 
 public class MyhomeWork {
     public static void main(String[] args){
-        faindTemp();
+        findTheColor();
     }
+
+
     // по введеному номеру определить цвет радуги
     //1 Красный: Red
     //2 Оранжевый:Orange
     //3 Желтый:Yellow
     //4 Зеленый:Green
-    //6 Голубой:Cyan
-    //7 Синий:Blue
-    //8 Фиолетовый:Purple
-
-
-
+    //5 Голубой:Cyan
+    //6 Синий:Blue
+    //7 Фиолетовый:Purple
+    public static void findTheColor() {
+        System.out.print("Plese enter your number color (1 to 7): ");
+        Scanner input = new Scanner(System.in);
+        int color = input.nextInt();
+        switch (color){
+            case 1:
+                System.out.println(" Your Color is Red");
+                break;
+            case 2:
+                System.out.println(" Your Color is Orange");
+                break;
+            case 3:
+                System.out.println(" Your Color is Yellow");
+                break;
+            case 4:
+                System.out.println("Your Color is Green");
+                break;
+            case 5:
+                System.out.println("Your Color is Cyan");
+                break;
+            case 6:
+                System.out.println(" Your Color is Blue");
+                break;
+            case 7:
+                System.out.println(" Your Color is Purple");
+                break;
+            default:
+                System.out.println("Wrong COLOR number!");
+                break;
+        }
+    }
 
     // найти температуру
     // для введенного числа вывести Тепло,Холодно , нормально
 
-    public static void faindTemp(){
+    public static void findTemp(){
 
         System.out.print("Plese enter your Temp (t): ");
         Scanner input = new Scanner(System.in);
