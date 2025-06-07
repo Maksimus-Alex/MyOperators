@@ -18,10 +18,17 @@ import java.io.IOException;
 
 public class MyOperators {
     public static void main(String[] args) throws IOException {
+
+    }
+    public static void enterOneSymbol() throws IOException {
         System.out.print("Pleas enter a value: ");
 
 
         int value = System.in.read();
-        System.out.println("You have entered the fjlloving symbl: " + (char) value);
+        System.out.println("You have entered the following symbl in char: " + (char) value);
+        System.out.println("You have entered the following symbl in Ascil code: " +  value);
     }
+
+
+
 }
