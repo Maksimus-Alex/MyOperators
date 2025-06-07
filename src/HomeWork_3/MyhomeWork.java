@@ -6,7 +6,37 @@ import java.util.Scanner;
 
 public class MyhomeWork {
     public static void main(String[] args){
-        findParity();
+        faindTemp();
+    }
+    // по введеному номеру определить цвет радуги
+    //1 Красный: Red
+    //2 Оранжевый:Orange
+    //3 Желтый:Yellow
+    //4 Зеленый:Green
+    //6 Голубой:Cyan
+    //7 Синий:Blue
+    //8 Фиолетовый:Purple
+
+
+
+
+    // найти температуру
+    // для введенного числа вывести Тепло,Холодно , нормально
+
+    public static void faindTemp(){
+
+        System.out.print("Plese enter your Temp (t): ");
+        Scanner input = new Scanner(System.in);
+        double t = input.nextDouble();
+        if (t>-5) {
+            System.out.println("Warm");
+        }
+           else if (t > -20 && t <= -5) {
+            System.out.println("Norm");
+        }
+           else if (t<= -20) {
+            System.out.println("Cold");
+        }
     }
 // Программа которая принимает на вход число и на выход
     //будет выводить сообщение четное оно или нет
@@ -16,9 +46,11 @@ public class MyhomeWork {
     // в зависимости от выявлемого результат он будет либо чет либо нечет.
 
     public static void findParity(){
+
         System.out.print("Plese enter your number: ");
         Scanner input = new Scanner(System.in);
         double division = input.nextDouble();
+
         // прогнать через формулу
         System.out.println("Your num " + division);
         double num = division % 2;
