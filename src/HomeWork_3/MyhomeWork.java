@@ -1,11 +1,39 @@
 package HomeWork_3;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.Scanner;
 
 public class MyhomeWork {
     public static void main(String[] args){
-        useElseIfSeason();
+        findParity();
     }
+// Программа которая принимает на вход число и на выход
+    //будет выводить сообщение четное оно или нет
+
+    // попросить ввести число
+    // прогнать через формулу деления (остаток от деления)
+    // в зависимости от выявлемого результат он будет либо чет либо нечет.
+
+    public static void findParity(){
+        System.out.print("Plese enter your number: ");
+        Scanner input = new Scanner(System.in);
+        double division = input.nextDouble();
+        // прогнать через формулу
+        System.out.println("Your num " + division);
+        double num = division % 2;
+        System.out.println(" Your division: " + num);
+        // теперь надо указать четность или нечетность
+        if(num == 1){
+            System.out.println("Your num is odd");
+        } else if (num == 0) {
+            System.out.println("Your num is even");
+
+        }
+
+
+    }
+
     //Написать программу для вывода поры года по номеру месяца
     // использовать оператор if else if
 
