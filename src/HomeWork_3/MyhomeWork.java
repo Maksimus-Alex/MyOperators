@@ -6,6 +6,13 @@ public class MyhomeWork {
     public static void main(String[] args){
         getSwitc();
     }
+    //Написать программу для вывода поры года по номеру месяца
+    // использовать оператор if else if
+
+    public static void useElseIf(){
+
+    }
+
     // Написать программу для вывода поры года по номеру месяца
     // использовать оператор switch/case
 //    Времена года:
@@ -28,7 +35,7 @@ public class MyhomeWork {
 //    November: (ноябрь)
 //    December: (декабрь
     public static void getSwitc(){
-        System.out.println("Plese enter your number (1 to 12)");
+        System.out.print("Plese enter your number (1 to 12): ");
         Scanner input = new Scanner(System.in);
         int mouth = input.nextInt();
         switch (mouth) {
@@ -67,6 +74,9 @@ public class MyhomeWork {
                 break;
             case 11:
                 System.out.println(" Your Season is Fall");
+                break;
+            default:
+                System.out.println("Wrong number!");
                 break;
         }
 
