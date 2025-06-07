@@ -4,12 +4,34 @@ import java.util.Scanner;
 
 public class MyhomeWork {
     public static void main(String[] args){
-        getSwitc();
+        useElseIfSeason();
     }
     //Написать программу для вывода поры года по номеру месяца
     // использовать оператор if else if
 
-    public static void useElseIf(){
+    public static void useElseIfSeason(){
+        System.out.print("Plese enter your number (1 to 12): ");
+        Scanner input = new Scanner(System.in);
+        int num = input.nextInt();
+        if (num > 5 && num < 9){
+            System.out.println("Your Season is Summer");
+        }
+         else if (num > 8 && num < 12){
+            System.out.println("Your Season is Fall");
+        }
+         else if (num > 0 && num < 3){
+            System.out.println(" Your Season is Winter");
+        }
+         else if (num ==12){
+            System.out.println(" Your Season is Winter");
+        }
+        else if (num > 2 && num < 6){
+            System.out.println(" Your Season is Spring");
+        }
+        else {
+            System.out.println(" Wrong number");
+        }
+
 
     }
 
@@ -34,7 +56,7 @@ public class MyhomeWork {
 //    October: (октябрь)
 //    November: (ноябрь)
 //    December: (декабрь
-    public static void getSwitc(){
+    public static void getSwitcSeason(){
         System.out.print("Plese enter your number (1 to 12): ");
         Scanner input = new Scanner(System.in);
         int mouth = input.nextInt();
