@@ -6,11 +6,54 @@ import java.util.Scanner;
 
 public class MyhomeWork {
     public static void main(String[] args){
-        findTheColor();
+        findSumNum();
+    }
+
+    // написать программу где вволится число ПолоЖИТЕЛЬНОЕ.
+    // программа суммирует ввсе число от 1 до введенного числа
+    // для вода числа воспользоваться классом Scaner
+    public static void findSumNum(){
+        Scanner input = new Scanner(System.in);
+        int num = input.nextInt();
+        System.out.println("Your Num: "+ num);
+        for(int i = 1; i<num; i++){
+            System.out.println( + i);
+        }
+
+
     }
 
 
-    // по введеному номеру определить цвет радуги
+
+    // Дз 2 вывести числа от 5 до 1
+    // использовать декремент --
+    public static void useNum(){
+        for(int i = 5; i>0; i--){
+            System.out.println("Num " + i);
+        }
+    }
+
+
+    // Циклы
+    // Дз 1. при помощи цикла for вывести на экран нечетные числа от 1 до 99
+    // использовать операцию инкремента ++
+    public static void findNum(){
+        // выводим числа от 1 до 99
+        for(int i = 1; i<100; i++){
+            int a = i % 2; // Теперь надо вывести только нечетные числа
+            if (a == 0)
+                continue;
+            System.out.println("Your num " + i);
+        }
+
+    }
+
+
+
+
+
+
+    // дз 5. по введеному номеру определить цвет радуги
     //1 Красный: Red
     //2 Оранжевый:Orange
     //3 Желтый:Yellow
@@ -22,7 +65,7 @@ public class MyhomeWork {
         System.out.print("Plese enter your number color (1 to 7): ");
         Scanner input = new Scanner(System.in);
         int color = input.nextInt();
-        switch (color){
+        switch (color) {
             case 1:
                 System.out.println(" Your Color is Red");
                 break;
@@ -50,7 +93,7 @@ public class MyhomeWork {
         }
     }
 
-    // найти температуру
+    // дз 4. найти температуру
     // для введенного числа вывести Тепло,Холодно , нормально
 
     public static void findTemp(){
@@ -68,7 +111,7 @@ public class MyhomeWork {
             System.out.println("Cold");
         }
     }
-// Программа которая принимает на вход число и на выход
+    // дз 3. Программа которая принимает на вход число и на выход
     //будет выводить сообщение четное оно или нет
 
     // попросить ввести число
@@ -96,7 +139,7 @@ public class MyhomeWork {
 
     }
 
-    //Написать программу для вывода поры года по номеру месяца
+    // дз 2. Написать программу для вывода поры года по номеру месяца
     // использовать оператор if else if
 
     public static void useElseIfSeason(){
@@ -125,7 +168,7 @@ public class MyhomeWork {
 
     }
 
-    // Написать программу для вывода поры года по номеру месяца
+    //  ДЗ 1. Написать программу для вывода поры года по номеру месяца
     // использовать оператор switch/case
 //    Времена года:
 //    Winter: (зима)
