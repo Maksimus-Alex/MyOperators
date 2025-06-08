@@ -12,14 +12,16 @@ public class MyhomeWork {
     // написать программу где вволится число ПолоЖИТЕЛЬНОЕ.
     // программа суммирует ввсе число от 1 до введенного числа
     // для вода числа воспользоваться классом Scaner
+
     public static void findSumNum(){
         Scanner input = new Scanner(System.in);
+        System.out.print("Your Num: ");
         int num = input.nextInt();
-        System.out.println("Your Num: "+ num);
-        for(int i = 1; i<num; i++){
-            System.out.println( + i);
+        int sum = 0;
+        for (int i = 0;i <= num; i++) {
+            sum = sum + i;
         }
-
+        System.out.println("Sum all num :" + sum);
 
     }
 
