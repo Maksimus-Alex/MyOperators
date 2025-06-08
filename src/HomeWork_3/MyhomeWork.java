@@ -6,13 +6,23 @@ import java.util.Scanner;
 
 public class MyhomeWork {
     public static void main(String[] args){
-        findSumNum();
+        useWhileForNum();
     }
 
+    // программа выводила на экран последовательность
+    // 7 14 21 28 35 42 49 56 63 70 77 84...
+    // Использовать цикл while
+    public static void useWhileForNum(){
+        int i = 7; // посследовательность чисел начинается с 7
+        while (i <= 98)  { // условие лучше поставить меньше или ровно
+            System.out.print(i + " "); // посследовательность идет близко друг к другу , попробую поменять местам
+            i = i + 7; // думаю эта строчка будет верной хоть мне кажеться можно и заменить
+        }
+
+    }
     // написать программу где вволится число ПолоЖИТЕЛЬНОЕ.
     // программа суммирует ввсе число от 1 до введенного числа
     // для вода числа воспользоваться классом Scaner
-
     public static void findSumNum(){
         Scanner input = new Scanner(System.in);
         System.out.print("Your Num: ");
@@ -24,9 +34,6 @@ public class MyhomeWork {
         System.out.println("Sum all num :" + sum);
 
     }
-
-
-
     // Дз 2 вывести числа от 5 до 1
     // использовать декремент --
     public static void useNum(){
@@ -34,8 +41,6 @@ public class MyhomeWork {
             System.out.println("Num " + i);
         }
     }
-
-
     // Циклы
     // Дз 1. при помощи цикла for вывести на экран нечетные числа от 1 до 99
     // использовать операцию инкремента ++
@@ -97,7 +102,6 @@ public class MyhomeWork {
 
     // дз 4. найти температуру
     // для введенного числа вывести Тепло,Холодно , нормально
-
     public static void findTemp(){
 
         System.out.print("Plese enter your Temp (t): ");
@@ -113,13 +117,13 @@ public class MyhomeWork {
             System.out.println("Cold");
         }
     }
+
     // дз 3. Программа которая принимает на вход число и на выход
     //будет выводить сообщение четное оно или нет
 
     // попросить ввести число
     // прогнать через формулу деления (остаток от деления)
     // в зависимости от выявлемого результат он будет либо чет либо нечет.
-
     public static void findParity(){
 
         System.out.print("Plese enter your number: ");
@@ -143,7 +147,6 @@ public class MyhomeWork {
 
     // дз 2. Написать программу для вывода поры года по номеру месяца
     // использовать оператор if else if
-
     public static void useElseIfSeason(){
         System.out.print("Plese enter your number (1 to 12): ");
         Scanner input = new Scanner(System.in);
