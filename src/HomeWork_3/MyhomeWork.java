@@ -6,7 +6,27 @@ import java.util.Scanner;
 
 public class MyhomeWork {
     public static void main(String[] args){
-        useWhileForNum();
+        multiplyTheSquare();
+    }
+
+    // ПРограмма выводящую на экран квадрата чисел
+    // от 10 до 20 включительно
+    public static void multiplyTheSquare (){
+        Scanner input = new Scanner(System.in);
+        for (int i =10; i<=20; i++){
+            System.out.println(" Multiply "+ (i*i));
+        }
+    }
+
+    // вывести первые 10 чисел посследовательности 0 -5 -10 -15 ...
+    public static void lernHomeWork(){
+        Scanner input = new Scanner(System.in);
+        int i = 0; // посследовательность чисел начинается с 0
+        while (i >= -45  )  { // условие лучше поставить меньше или ровно
+            System.out.print(i + " "); // посследовательность идет близко друг к другу , попробую поменять местам
+            i = i - 5;
+        }
+
     }
 
     // программа выводила на экран последовательность
@@ -20,6 +40,7 @@ public class MyhomeWork {
         }
 
     }
+
     // написать программу где вволится число ПолоЖИТЕЛЬНОЕ.
     // программа суммирует ввсе число от 1 до введенного числа
     // для вода числа воспользоваться классом Scaner
@@ -34,6 +55,7 @@ public class MyhomeWork {
         System.out.println("Sum all num :" + sum);
 
     }
+
     // Дз 2 вывести числа от 5 до 1
     // использовать декремент --
     public static void useNum(){
@@ -41,6 +63,7 @@ public class MyhomeWork {
             System.out.println("Num " + i);
         }
     }
+
     // Циклы
     // Дз 1. при помощи цикла for вывести на экран нечетные числа от 1 до 99
     // использовать операцию инкремента ++
@@ -54,8 +77,6 @@ public class MyhomeWork {
         }
 
     }
-
-
 
 
 
@@ -120,7 +141,6 @@ public class MyhomeWork {
 
     // дз 3. Программа которая принимает на вход число и на выход
     //будет выводить сообщение четное оно или нет
-
     // попросить ввести число
     // прогнать через формулу деления (остаток от деления)
     // в зависимости от выявлемого результат он будет либо чет либо нечет.
