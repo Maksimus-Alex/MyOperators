@@ -22,8 +22,8 @@ public class MyHomeWork4 {
         // проще будет сделать чрез true
 
         boolean number = false;
-        for (int i = 0; i< array.length; i++){
-            if (array[i] == findNum){
+        for (int index = 0; index< array.length; index++){
+            if (array[index] == findNum){
                 number = true;
                 break;
             }
