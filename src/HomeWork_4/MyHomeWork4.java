@@ -1,5 +1,6 @@
 package HomeWork_4;
 
+import javax.xml.transform.Source;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
@@ -7,7 +8,7 @@ import java.util.Scanner;
 
 public class MyHomeWork4 {
     public static void main(String[] args) {
-        createMoreArray();
+        randomArray();
     }
 
     // Дз 0
@@ -50,83 +51,126 @@ public class MyHomeWork4 {
     // если такого числа нет. Вывести сообщение об этом
     // в резулятате должен быть новый массив без указанного числа
 
-
-    public static void start() {
-        Scanner scanner = new Scanner(System.in);
-
-        // Создаем массив целых чисел (можно изменить размер и значения)
-        int[] originalArray = {1, 2, 3, 4, 5, 3, 2};
-
-        // Запрашиваем число для удаления у пользователя
-        System.out.print("Введите число для удаления: ");
-        int numberToRemove = scanner.nextInt();
-
-        // Удаляем все вхождения числа из массива
-        int[] newArray = removeElement(originalArray, numberToRemove);
-
-        // Если в массиве не было числа для удаления
-        if (newArray.length == originalArray.length) {
-            System.out.println("Число " + numberToRemove + " не найдено в массиве.");
-        } else {
-            // Выводим новый массив
-            System.out.println("Новый массив без числа " + numberToRemove + ": " + Arrays.toString(newArray));
-        }
-        scanner.close();
-    }
-
-    // Метод для удаления всех вхождений числа из массива
-    public static int[] removeElement(int[] array, int numberToRemove) {
-        // Используем ArrayList для временного хранения элементов
-        ArrayList<Integer> temp = new ArrayList<>();
-
-        // Перебираем элементы исходного массива
-        for (int element : array) {
-            // Если элемент не равен удаляемому числу, добавляем его в ArrayList
-            if (element != numberToRemove) {
-                temp.add(element);
-            }
-        }
-
-        // Если после удаления элементов в ArrayList ничего не осталось, то возвращаем исходный массив.
-        if (temp.isEmpty()) {
-            return new int[0];
-        }
-
-        // Создаем новый массив с размером, равным количеству элементов в ArrayList
-        int[] newArray = new int[temp.size()];
-        // Копируем элементы из ArrayList в новый массив
-        for (int i = 0; i < temp.size(); i++) {
-            newArray[i] = temp.get(i);
-        }
-        return newArray;
-    }
-
-    //    Создать и заполнить массив случайными числами
-    //     и выведите максимальное, минимальное и среднее значение.
-    //     для генерации случайного числа использоваться метод math.random().
-    //      Пусть будет возможно создавать массив произвольного размера.
-    //       пусть размер массива вводится с консоли
-
-
-    public static void createMoreArray(){
-        int [] array1 = {2,4,6,8,10};
-
-        for (int i = 0; i < array1.length; i++){
-            System.out.print(" " + array1[i]);
+    public static void deletElementArray() {
+        // Создаем массив целых чисел
+        int[] originalArray = {1, 2, 3, 5, 9, -15, 20};
+        for (int element = 0; element < originalArray.length; element++) {
+            System.out.print(originalArray[element] + " ");
         }
         System.out.println(" ");
 
-        int [] array2 = {1,3,5,7,9};
-        for (int index = 0; index < array2.length; index++) {
-            System.out.print(" " + array2[index]);
-        }
-     public static void avgArray1(){
+        // запрашиваем елемент чрезе сканер
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter Element to remove: ");
+        int removeNum = input.nextInt();
 
+        // Смотри сколько вхождений числа было
+        // то есть проверка наличия в массиве данного числа
+        int enter = 0;
+        for (int num : originalArray) {
+            if (num == removeNum) {
+                enter++;
+            }
+        }
+
+        // Ели число на найденно в массиве вывести сообщение об этом
+        if (enter == 0) { // сравнивает только ссылки, то есть проверяет, равен ли объект самому себе
+            System.out.println("Your element not found");
+            return;
+        }
+
+        // Тут Сложно.
+        // Создать новый массив но при этом без этого числа которое мы указали
+        int[] newArray = new int[originalArray.length - enter];
+        int i = 0;
+        for (int newNnum : originalArray) {
+            if (newNnum != removeNum) { // равно true , но если removnum false иначе все будет false
+                newArray[i++] = newNnum;
+            }
+        }
+
+        System.out.println("Your element to remove " + removeNum);
+        System.out.print("New Array");
+        for (int removeElement : originalArray) {
+            System.out.print(removeElement + " ");
         }
     }
 
+    public static void enterNewArray(int[] originalArray) {
+        for (int num : originalArray) {
+            System.out.println(num);
+        }
+    }
+
+    // Дз 2 Создать и заполнить массив случйнми числами и вывести
+    // максимальное , минимальное , среднее значение
+    // Массив произвольного размера
+    // Размер массива вводится с консоли
+    // Использовать метод Math.random()
+
+    public static void randomArray() {
+        // создать массив и спроситьь про размер массива
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter length array: ");
+        int length = input.nextInt();
+        // только сделал запрос но ничего не вывел
+
+        double[] array = new double[length];
+        for (int index = 0; index < length; index++) {
+            array[index] = Math.random();
+            System.out.println(" " + array [index] );
+        }
+        // Поиск Значений
+        // bcgjkmpe. double т.к. там значение с плавающей точкой
+        // а значит не будет выбивать ошибку во время поиска среднего значения
+        double max = array[0]; // В результате выполнения этой строки,
+        // переменная max будет содержать значение первого элемента массива array
+        double min = array[0];
+        double sum = 0;// эта строка создает переменную sum
+        // предназначенную для хранения числовых значений с дробной частью
+
+        for (double num : array){// перебираем все элементы массива
+            if (num>max){
+                max = num; // если в if все истинное тогда будет выполняться эта строчка
+            }
+            if (num<min){
+                min = num;
+            }
+            sum = sum + num;
+        }
+        double averege = sum/ length;
+
+        System.out.println("************************");
+
+        System.out.println("Max " + max);
+        System.out.println("Min "+min);
+        System.out.println("Avg "+averege);
+
+        // Шпаргалка
+//        int n = 100;
+//        double[] array = new double[n];
+//        for (int i = 0; i < array.length; i++) {
+//            array[i] = Math.random();
+//        }
+//
+//        double max = array[0]; // Массив не должен быть пустым
+//        double min = array[0];
+//        double avg = 0;
+//        for (int i = 0; i < array.length; i++) {
+//            if(max < array[i])
+//                max = array[i];
+//            if(min > array[i])
+//                min = array[i];
+//            avg += array[i]/array.length;
+//        }
+//
+//        System.out.println("max = " + max);
+//        System.out.println("min = " + min);
+//        System.out.println("avg = " + avg);
+//    }
+
+
+    }
 }
-
-
 
 
