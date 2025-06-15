@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class MyHomeWork4 {
     public static void main(String[] args) {
-        randomArray();
+        createTwoArray();
     }
 
     // Дз 0
@@ -102,7 +102,8 @@ public class MyHomeWork4 {
         }
     }
 
-    // Дз 2 Создать и заполнить массив случйнми числами и вывести
+    // Дз 2
+    // Создать и заполнить массив случйнми числами и вывести
     // максимальное , минимальное , среднее значение
     // Массив произвольного размера
     // Размер массива вводится с консоли
@@ -118,7 +119,7 @@ public class MyHomeWork4 {
         double[] array = new double[length];
         for (int index = 0; index < length; index++) {
             array[index] = Math.random();
-            System.out.println(" " + array [index] );
+            System.out.println(" " + array[index]);
         }
         // Поиск Значений
         // bcgjkmpe. double т.к. там значение с плавающей точкой
@@ -129,22 +130,22 @@ public class MyHomeWork4 {
         double sum = 0;// эта строка создает переменную sum
         // предназначенную для хранения числовых значений с дробной частью
 
-        for (double num : array){// перебираем все элементы массива
-            if (num>max){
+        for (double num : array) {// перебираем все элементы массива
+            if (num > max) {
                 max = num; // если в if все истинное тогда будет выполняться эта строчка
             }
-            if (num<min){
+            if (num < min) {
                 min = num;
             }
             sum = sum + num;
         }
-        double averege = sum/ length;
+        double averege = sum / length;
 
         System.out.println("************************");
 
         System.out.println("Max " + max);
-        System.out.println("Min "+min);
-        System.out.println("Avg "+averege);
+        System.out.println("Min " + min);
+        System.out.println("Avg " + averege);
 
         // Шпаргалка
 //        int n = 100;
@@ -171,6 +172,69 @@ public class MyHomeWork4 {
 
 
     }
+
+
+    // дЗ 3
+    // Создать 2 массива из 5 чисел
+    // почитать среднее арифмитическое какждого массива
+    // Сообщить для какого масива это значение оказалось больше
+    // либо сообщите что их среднее арифмитечкие равны
+
+
+    public static void createTwoArray() {
+        // Создаем 2 массива из 5 чисел и выводим их
+
+
+        int[] oneArray = {1, 3, 5, 7, 9};
+        for (int oneElement = 0; oneElement < oneArray.length; oneElement++) {
+            System.out.print( oneArray[oneElement] + " ");
+        }
+        System.out.println(" ");
+
+
+        int[] twoArray = {2, 4, 6, 8, 10};
+        for (int twoElement = 0; twoElement < twoArray.length; twoElement++) {
+            System.out.print(twoArray[twoElement] + " ");
+        }
+        System.out.println(" ");
+
+
+        double avgFirst = calculateAvarage(oneArray);
+        double avgSecond = calculateAvg(twoArray);
+        System.out.println("\n Avarage 1 = " + avgFirst);
+        System.out.println("\n Avarage 2 = " + avgSecond);
+
+        if (avgFirst>avgSecond){
+            System.out.println("The arithmetic mean of the first array is greater");
+        }
+        if (avgFirst<avgSecond){
+            System.out.println("The arithmetic mean of the second array is greater");
+        }
+        else {
+            System.out.println("The arithmetic means of the arrays are equal");
+        }
+    }
+
+    public static double calculateAvarage(int[] oneArray) {
+
+        // поиск первого среднего
+        int sum = 0;
+        for (int number : oneArray) {
+            sum = sum + number;
+        }
+
+        return (double) sum / oneArray.length;
+    }
+
+    public static double calculateAvg(int[] twoArray) {
+        int sumSecond = 0;
+        for (int element : twoArray) {
+            sumSecond = sumSecond + element;
+        }
+        return (double) sumSecond/ twoArray.length;
+    }
 }
+
+
 
 
