@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class homeWork5 {
     public static void main(String[] avg){
-        createMultiArray();
+        buildChessBoard();
     }
 
     // Дз 0
@@ -14,10 +14,21 @@ public class homeWork5 {
     // на заданное число. Пусть число , задается с консоли
 
     public static void createMultiArray(){
-        Random arrayElement = new Random();
-        int random = arrayElement.nextInt();
-        int[][][] array = new int[2][3][4];
+        int[][][] array =
+                {{{1, 2, 3}, {4, 5, 6}},
+                {{10, 11, 12}, {13, 14, 15}, {16, 17, 18}},
+                {{19, 20, 21}, {22, 23, 24}, {25, 26, 27}, {7, 8, 9}}};
+//        int[][][] array = new int[2][3][4];
         // Создать трех мерный массив
+        for (int a =0; a < array.length; a ++) {
+            for (int in = 0; in < array[a].length; in++) {
+                    for (int b = 0; b < array[a][in].length; b++) {
+                        System.out.print(" " + array[a][in][b]);
+                    }
+                System.out.println();
+            }
+            System.out.println();
+        }
 
         System.out.print("Enter num: ");
         Scanner input = new Scanner(System.in);
@@ -32,9 +43,35 @@ public class homeWork5 {
             for (int index = 0; index< array[i].length; index++){
                 for (int element = 0; element < array[i][index].length; element++){
                     array[i][index][element] = array[i][index][element] + num;
-                    System.out.println(" Array " + array[i][index][element]);
+                    System.out.print(" " + array[i][index][element]);
+
                 }
+                System.out.println();
             }
+            System.out.println();
+        }
+    }
+
+
+
+
+
+
+    public static void buildChessBoard(){
+
+    //задаём шахматную доску двумерным массивом
+    String [][] chessBoard = new String[8][8];
+
+        for (int a = 0; a< chessBoard.length; a++) {
+
+            for (int b = 0; b< chessBoard[0].length; b++) {
+                if ((a + b) % 2 == 0) chessBoard[a][b] = "W";
+                else chessBoard[a][b] = "B";
+                System.out.print(" " + chessBoard[a][b]);
+            }
+            System.out.println();
         }
     }
 }
+
+
