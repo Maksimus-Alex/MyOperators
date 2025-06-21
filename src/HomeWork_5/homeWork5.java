@@ -65,7 +65,7 @@ public class homeWork5 {
         for (int a = 0; a< chessBoard.length; a++) {
 
             for (int b = 0; b< chessBoard[0].length; b++) {
-                if ((a + b) % 2 == 0) chessBoard[a][b] = "W";
+                if ((a + b) % 2 == 0) chessBoard[a][b] = "W"; // ПРоверяем четность чисел
                 else chessBoard[a][b] = "B";
                 System.out.print(" " + chessBoard[a][b]);
             }
