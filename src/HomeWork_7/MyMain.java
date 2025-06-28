@@ -2,6 +2,8 @@ package HomeWork_7;
 
 import HomeWork_7.phone.Phone;
 
+import java.util.SortedMap;
+
 public class MyMain {
 
     public static void main(String[] args) {
@@ -28,8 +30,23 @@ public class MyMain {
         System.out.println("Number: " + iphone.getNumber()+ "\n");
 
         xiaomi.receiveCall("Vlada");
-        System.out.println("Number: " + xiaomi.getNumber());
+        System.out.println("Number: " + xiaomi.getNumber()+ "\n");
+        System.out.println("**************************");
 
+        // receive Call и getNumber для каждого из обьектов
+        // теперь перегруженный метод receiveCall
+        phone.receiveCall("Max",80295852356L);
+        System.out.println(phone + "\n");
+        iphone.receiveCall("Alena",823345896523L);
+        System.out.println(iphone+ "\n");
+        xiaomi.receiveCall("Dad",80337598246L);
+        System.out.println(xiaomi+ "\n");
+
+        System.out.println("************");
+
+        phone.sendMassage("80295852356 ");
+        iphone.sendMassage("823345896523");
+        xiaomi.sendMassage("80337598246");
     }
     // Просто шпаргалка что все работает при вызове констуркторов
     //Phone phone1 = new Phone();

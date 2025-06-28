@@ -32,9 +32,19 @@ public class Phone {
     }
 
     public void receiveCall(String name, long number){
-        this.number = number;
         System.out.println("Call " + name + "\n" + "Number " + number);
     }
+    public void sendMassage(String... number){
+        System.out.println("Massage to: ");
+        for (String phoneNumber : number){
+            System.out.print(phoneNumber + " " + "\n");
+            // применил ранее незенакомое многоточие "..."
+            // в Java многоточие в определении метода называют varargs(переменные аргументы)
+            // позволяет принимать ноль или более аргументов одного типа
+        }
+    }
+
+
 
 
 
