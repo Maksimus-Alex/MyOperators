@@ -3,6 +3,10 @@ import HomeWork_8.figures.*;
 
 public class MyMain {
     public static void main(String[] args) {
+
+    }
+
+    public static void getFigures(){
         // создать массив из 5 фигур
         // вывести сумму периметров всех фигур
         Figures[] figures = new Figures[5];
@@ -23,6 +27,7 @@ public class MyMain {
         System.out.println("Perimeter Figures 4: " + figures[3].perimeter());
         System.out.println("Perimeter Figures 5: " + figures[4].perimeter());
         System.out.println("SUm all perimeter: " + sumPerimeter);
-
     }
+
+
 }
