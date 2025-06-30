@@ -1,13 +1,13 @@
 package HomeWork_8.figures;
 
-public class triangle extends figures {
+public class Triangle extends Figures {
     // стороны треуголника
     private double a;
     private double b;
     private double c;
 
 
-    public triangle(double a, double b, double c) {
+    public Triangle(double a, double b, double c) {
         this.a = a;
         this.b = b;
         this.c = c;
@@ -19,7 +19,7 @@ public class triangle extends figures {
 
     // периметр
     @Override
-    double perimeter(){
+    public double perimeter(){
         return a+b+c;
     }
     @Override

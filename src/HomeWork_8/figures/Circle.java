@@ -1,15 +1,15 @@
 package HomeWork_8.figures;
 
-public class circle extends figures{
+public class Circle extends Figures {
     //  S = π * r²
     // C = 2 · π · r
     private double r;
 
-    public circle(double r){
+    public Circle(double r){
         this.r = r;
     }
     @Override
-    double perimeter(){
+    public double perimeter(){
         return 2*3.14*r;
     }
     @Override
