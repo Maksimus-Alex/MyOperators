@@ -8,28 +8,42 @@ import java.util.Scanner;
 
 public class MyMain {
     public static void main(String[] args) {
-
-           Scanner scanner = new Scanner(System.in);
-           System.out.print("Enter number Document: ");
-           String numDocument = scanner.nextLine();
-           System.out.println("You enter : " + numDocument);
-
+        checkText();
 
     }
+    public static void checkText(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter number Document: ");
+        String numDocument = scanner.nextLine();
 
-    public static void сheckNumber(String numDocument) throws Abc,Begin555,Begin1a2b{
-        if (numDocument.contains("abc")){
-            throw new Abc("The document number contains 'abc'");
+                System.out.println("You enter : " + numDocument);
+        if (numDocument.startsWith("1a2b")) {
+            try {
+                throw new Begin1a2b("The document number start '1a2b'");
+            } catch (Begin1a2b e) {
+                throw new RuntimeException(e.getMessage());
+            }
         }
-        if (numDocument.startsWith("555")){
-            throw new Begin555("The document number Start '555'");
-        }
-        if (numDocument.startsWith("1a2b")){
-            throw new Begin1a2b("The document number start '1a2b'");
-        }
+        if (numDocument.startsWith("555")) {
+            try {
+                throw new Begin555("The document number Start '555'");
+            } catch (Begin555 e) {
+                throw new RuntimeException(e.getMessage());
 
+            }
+        }
+        if (numDocument.contains("abc")) {
+            try {
+                throw new Abc("The document number contains 'abc'");
+            } catch (Abc e) {
+                throw new RuntimeException(e.getMessage());
+            }
+        }
     }
-
-
-
 }
+
+
+
+
+
+
