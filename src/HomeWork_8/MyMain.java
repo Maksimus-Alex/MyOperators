@@ -1,9 +1,9 @@
 package HomeWork_8;
 import HomeWork_8.figures.*;
+import HomeWork_8.Interface.*;
 
 public class MyMain {
     public static void main(String[] args) {
-
     }
 
     public static void getFigures(){
@@ -29,5 +29,13 @@ public class MyMain {
         System.out.println("SUm all perimeter: " + sumPerimeter);
     }
 
+    public static void printPosition(){
+        Position director = new Director();
+        Position worker = new Working();
+        Position accountant = new Accountant();
 
+        director.getPosition();
+        worker.getPosition();
+        accountant.getPosition();
+    }
 }
